@@ -1,6 +1,5 @@
 <template lang="jade">
 #app
-  img(src="./assets/logo.png")
   router-view
 </template>
 
