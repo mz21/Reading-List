@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Reading from 'containers/Reading';
+import ReadingPage from 'containers/ReadingPage';
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Reading',
-      component: Reading,
+      name: 'ReadingPage',
+      component: ReadingPage,
     },
   ],
 });
