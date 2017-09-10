@@ -3,7 +3,6 @@
   .timeline_section(v-for="section in sections")
     .timeline_date_block
       p.day {{ section.day }}
-      p.date {{ section.date }}
     .timeline_section_block
       .timeline_line_block
         .timeline_line

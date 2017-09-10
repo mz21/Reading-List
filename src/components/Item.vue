@@ -3,7 +3,7 @@
   .item_type
     .item_type_circle
   .item_reading
-    h4.reading_title {{ metadata.title }}
+    h4.reading_title {{ metadata.readingTitle }}
     .reading_author
       {{ authorsString }}
   .item_genres
@@ -57,6 +57,7 @@ export default {
 .item_genres
   width: 25%
   display: flex
+  flex-wrap: wrap
   p.genre
     margin: 0 5px
     color: rgb(164,164,164)

@@ -1,8 +1,8 @@
 <template lang="jade">
 .rating_block
   .rating
-    img.star(:src="filledStar", v-for="n in rating")
-    img.star(:src="emptyStar", v-for="n in 5 - rating")
+    img.star(:src="filledStar", v-for="n in parseInt(rating, 10)")
+    img.star(:src="emptyStar", v-for="n in 5 - parseInt(rating, 10)")
   p {{ message }}
 </template>
 
@@ -21,15 +21,15 @@ export default {
   computed: {
     message() {
       switch (this.rating) {
-        case 1:
+        case '1':
           return 'The Worst';
-        case 2:
+        case '2':
           return 'Ok';
-        case 3:
+        case '3':
           return 'Good';
-        case 4:
+        case '4':
           return 'Great!';
-        case 5:
+        case '5':
           return 'Must Read!';
         default:
           return 'Unknown Rating';
