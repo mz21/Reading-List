@@ -3,7 +3,8 @@
   .item_type
     .item_type_circle(:style="{ borderColor: readingTypeColor }")
   .item_reading
-    h4.reading_title {{ metadata.readingTitle }}
+    a.reading_title_url(:href="metadata.url" target="_blank")
+      h4.reading_title {{ metadata.readingTitle }}
     .reading_author(v-if="authorsString")
       {{ authorsString }}
   .item_genres

@@ -30,6 +30,9 @@ export default {
         })
       }
     }
+    for (let i = 0; i < sections.length; i++) {
+      sections[i].items.reverse()
+    }
     sections.reverse()
     const newState = state
     newState.sections = sections
