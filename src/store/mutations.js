@@ -30,6 +30,7 @@ export default {
         })
       }
     }
+    sections.reverse()
     const newState = state
     newState.sections = sections
   }

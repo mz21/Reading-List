@@ -1,10 +1,10 @@
 <template lang="jade">
 .item_line
   .item_type
-    .item_type_circle
+    .item_type_circle(:style="{ borderColor: readingTypeColor }")
   .item_reading
     h4.reading_title {{ metadata.readingTitle }}
-    .reading_author
+    .reading_author(v-if="authorsString")
       {{ authorsString }}
   .item_genres
     p.genre(v-for="genre in metadata.genres") {{ '#' + genre }}
@@ -19,7 +19,22 @@ export default {
   props: ['metadata'],
   computed: {
     authorsString() {
-      return this.metadata.authors.join(' & ');
+      if (this.metadata.authors) {
+        return this.metadata.authors.join(' & ')
+      }
+      return null
+    },
+    readingTypeColor() {
+      switch (this.metadata.readingType) {
+        case 'Article':
+          return '#dcb0f4'
+        case 'Book':
+          return '#90DBD8'
+        case 'Video':
+          return '#f6a9ae'
+        default:
+          return '#dcb0f4'
+      }
     }
   }
 };
@@ -40,7 +55,8 @@ export default {
     width: 1rem
     height: 1rem
     border-radius: 0.5rem
-    border: 2px solid rgb(221,189,238)
+    border-width: 2px
+    border-style: solid
     background-color: white
     margin: 0 auto
     margin-top: 0.25rem
