@@ -6,7 +6,7 @@
     a.reading_title_url(:href="metadata.url" target="_blank")
       h4.reading_title {{ metadata.readingTitle }}
     .reading_author(v-if="authorsString")
-      {{ authorsString }}
+      | {{ authorsString }}
   .item_genres
     p.genre(v-for="genre in metadata.genres") {{ '#' + genre }}
   rating(:rating="metadata.rating")
